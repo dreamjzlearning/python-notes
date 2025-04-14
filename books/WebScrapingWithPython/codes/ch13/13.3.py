@@ -21,7 +21,12 @@ print(r.text)
 
 session = requests.Session()
 
-params = {
-    "username": "A",
-    "password": "password"
-}
+params = {"username": "A", "password": "password"}
+
+s = session.post("https://pythonscraping.com/pages/cookies/welcome.php", data=params)
+print("Cookie is set to:")
+print(s.cookies.get_dict())
+print("Going to profile page...")
+# session will keep track of session information
+s = session.get("https://pythonscraping.com/pages/cookies/profile.php")
+print(s.text)

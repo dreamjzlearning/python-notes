@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <title>A bot-proof form</title>
+</head>
+<style>
+    body {
+        /* hide the content overflows */
+        overflow-x: hidden;
+    }
+
+    .customHidden {
+        position: absolute;
+        right: 50000px;
+    }
+</style>
+
+<body>
+    <h2>A bot-proof form</h2>
+    <a href="http://pythonscraping.com/dontgohere" style="display:none;">Go here!</a>
+    <a href="http://pythonscraping.com">Click me!</a>
+    <form>
+        <input type="hidden" name="phone" value="valueShouldNotBeModified" />
+        <p />
+        <input type="text" name="email" class="customHidden" value="intentionallyBlank" />
+        <p />
+        <input type="text" name="firstName" />
+        <p />
+        <input type="text" name="lastName" />
+        <p />
+        <input type="submit" value="Submit" />
+        <p />
+    </form>
+</body>
+
+</html>
